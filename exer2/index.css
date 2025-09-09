@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;600&display=swap");
+
+body {
+  margin: 0;
+}
+
+.all-content {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.left-side {
+  background-color: #444e42;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Kumbh Sans", serif;
+  color: white;
+}
+
+.left-side h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: -1%;
+}
+
+.pfp {
+  height: 50%;
+  border-radius: 40%;
+}
+
+.right-side {
+  background-color: #f4f2e6;
+  width: 55%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Kumbh Sans", serif;
+}
+
+.top-flowers,
+.bottom-flowers {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-flowers {
+  margin-top: 2%;
+}
+
+.bottom-flowers {
+  margin-top: -9%;
+}
+
+.white-top {
+  width: 30%;
+  height: 70%;
+  animation: floating 3s ease-in-out infinite;
+}
+
+
+@keyframes swaying {
+  0%, 100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes swaying-other {
+  0%, 100% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+.red-top {
+  width: 60%;
+  height: 55%;
+  margin-top: -3%;
+  animation: swaying 4s infinite;
+  animation-delay: 0s;
+}
+
+.purple-top {
+  width: 60%;
+  height: 68%;
+  margin-right: -3%;
+  animation: swaying-other 4s infinite;
+  animation-delay: 0.5s;
+}
+
+.leaf-top {
+  width: 70%;
+  height: 85%;
+  animation: floating 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.red-bottom {
+  width: 75%;
+  height: 70%;
+  animation: swaying-other 4s infinite;
+}
+
+.blue-bottom {
+  width: 80%;
+  height: 65%;
+  margin-left: -10%;
+  animation: floating 4s infinite;
+  animation-delay: 2s;
+}
+
+.leaf-bottom {
+  width: 90%;
+  height: 60%;
+  animation: floating 4s infinite;
+}
+
+.purple-bottom {
+  width: 70%;
+  height: 75%;
+  margin-left: -10%;
+  animation: swaying 4s infinite;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px -40px 20px;
+  z-index: 10;
+  gap: 15px;
+}
+
+.full-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+    margin-top: -5%;
+    margin-bottom: 10%;
+}
+
+.header h2 {
+  font-size: 2.8rem;
+}
+
+.boxes {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  width: 80%;
+  margin-top: 0%;
+  flex-wrap: wrap;   
+}
+
+.top-boxes,
+.bottom-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.bottom-boxes {
+    gap: 120px;
+}
+
+.major {
+  position: relative;
+  width: 260px;
+  height: 230px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 90px;
+}
+
+.major:hover {
+    box-shadow: 0 0 10px 2px #87c1b6;
+    transform: scale(1.03);
+}
+
+.flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card > div {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-card.is-flipped > div {
+  transform: rotateY(180deg);
+}
+
+.flip-card .major-content-front,
+.flip-card .major-content-back,
+.flip-card .passion-content-front,
+.flip-card .passion-content-back,
+.flip-card .year-content-front,
+.flip-card .year-content-back,
+.flip-card .where-im-from-front,
+.flip-card .where-im-from-back {
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Back of the card */
+.flip-card .major-content-back,
+.flip-card .passion-content-back,
+.flip-card .year-content-back,
+.flip-card .where-im-from-back {
+  transform: rotateY(180deg);
+  background: #fafafa;
+}
+
+.flip-card-major .major-content-front, .flip-card-major .major-content-back {
+  width: 260px;
+  height: 230px;
+  border-radius: 90px;
+  background: #b5e7dc;
+}
+
+.flip-card-year .year-content-front,
+.flip-card-year .year-content-back {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%; 
+  background: #ad94b9;
+}
+
+.year {
+  display: flex;
+  flex-direction: column;
+  background-color: #ad94b9;
+  border-radius: 30px;
+  padding: 40px 30px;
+  align-items: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.year h3 {
+    margin-top: -1%;
+}
+
+.year:hover {
+    box-shadow: 0 0 15px 5px #7f4f97;
+    transform: scale(1.03);
+}
+
+.passion {
+  display: flex;
+  flex-direction: column;
+  background-color: #eb795e;
+  border-radius: 40px;
+  padding: 50px 30px;
+  align-items: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.passion:hover {
+    box-shadow: 0 0 15px 5px #b94a31;
+    transform: scale(1.03);
+}
+
+
+.flip-card-passion .passion-content-front,
+.flip-card-passion .passion-content-back {
+  width: 220px;
+  height: 150px;
+  border-radius: 50px;
+  background: #eb795e;
+}
+
+.flip-card-passion .passion-content-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  height: 70%;  
+  
+  text-align: center;
+}
+
+.where-im-from {
+  display: flex;
+  padding: 40px 20px;
+  flex-direction: column;
+  background-color: #c3c69f;
+  border-radius: 80px;
+  align-items: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  width: 240px;
+  height: 220px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.where-im-from:hover {
+    box-shadow: 0 0 15px 5px #b5be51;
+    transform: scale(1.03);
+}
+
+.flip-card-from .where-im-from-front,
+.flip-card-from .where-im-from-back {
+  width: 240px;
+  height: 160px;
+  border-radius: 80px;
+  background: #c3c69f;
+}
+
+.major:active, .year:active, .passion:active, .where-im-from:active {
+    transform: scale(0.98);
+}
+
+h3 {
+  text-align: center;
+}
+
+.computer {
+  width: 30%;
+  height: auto;
+}
+
+.third {
+    width: 40%;
+    height: auto;
+    margin-top: -5%;
+}
+
+.bridge {
+    width: 65%;
+    height: auto;
+}
+
+.balance {
+    width: 50%;
+    height: auto;
+}
+
+.passion h3{
+    margin: 10px 0;
+}
+
+.flip-card-major {
+  width: 300px;
+  height: 250px;
+  border-radius: 90px;
+}
+
+.flip-card-year {
+  width: 200px;
+  height: 180px;
+  border-radius: 30px;
+}
+
+.flip-card-passion {
+  width: 240px;
+  height: 210px;
+  border-radius: 40px;
+}
+
+.flip-card-from {
+  width: 120px;
+  height: 220px;
+  border-radius: 50px;
+}
+
+.where-im-from h3 {
+    font-size: 1.7rem;
+}
+
+.passion-content-back p {
+    font-size: 1rem;
+}

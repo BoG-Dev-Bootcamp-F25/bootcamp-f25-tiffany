@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Webpage</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="all-content">
+            <div class="left-side">
+                <div class="top-flowers">
+                    <img src="images/white-top.png" class="white-top"/>
+                    <img src="images/red-top.png" class="red-top"/>
+                    <img src="images/purple-top.png" class="purple-top"/>
+                    <img src="images/leaf-top.png" class="leaf-top"/>
+                </div>
+                <h1>TIFFANY PHAM</h1>
+                <img src="images/pfp.JPG" class="pfp"/>
+                <div class="bottom-flowers">
+                    <img src="images/red-bottom.png" class="red-bottom"/>
+                    <img src="images/blue-bottom.png" class="blue-bottom"/>
+                    <img src="images/leaf-bottom.png" class="leaf-bottom"/>
+                    <img src="images/purple-bottom.png" class="purple-bottom"/>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="full-header">
+                    <div class="header">
+                        <img src="images/about-flower.png" alt="flower with yellow center and red petals"/>
+                        <h2>about me</h2>
+                        <img src="images/about-flower.png" alt="flower with yellow center and red petals"/>
+                    </div>
+                    <p>(click on the boxes!)</p>
+                </div>
+                <div class="boxes">
+                    <div class="top-boxes">
+                        <div class="flip-card flip-card-major">
+                            <div class="major">
+                                <div class="major-content-front">
+                                    <h3>major</h3>
+                                    <img src="images/computer.png" class="computer" alt="a computer"/>
+                                </div>
+                                <div class="major-content-back">
+                                    <p>I'm majoring in computer science (BS) with threads in people and intelligence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card flip-card-passion">
+                            <div class="passion">
+                                <div class="passion-content-front">
+                                    <h3>social good passion</h3>
+                                    <img src="images/equality.png" class="balance" alt="a balance with one person on each side"/>
+                                </div>
+                                <div class="passion-content-back">
+                                    <p>
+                                        I'm deeply passionate about racial and gender equality. I believe that every person deserves to be seen and valued
+                                        with fairness, regardless of their background or identity. Through Bits of Good, I hope to be able to use my skills 
+                                        to create inclusive spaces that can uplift underrepresented communities.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-boxes">
+                        <div class="flip-card flip-card-year">
+                            <div class="year">
+                                <div class="year-content-front">
+                                    <h3>year</h3>
+                                    <img src="images/3rd.png" class="third" alt="the number 3"/>
+                                </div>
+                                <div class="year-content-back">
+                                    <p>I'm a third year student.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card flip-card-from">
+                            <div class="where-im-from">
+                                <div class="where-im-from-front">
+                                    <h3>where im from</h3>
+                                    <img src="images/golden-gate.png" class="bridge" alt="golden gate bridge"/>
+                                </div>
+                                <div class="where-im-from-back">
+                                    <p>I'm from San Jose, CA.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            document.querySelectorAll('.flip-card').forEach(card => {
+                card.addEventListener('click', () => {
+                card.classList.toggle('is-flipped');
+                });
+            });
+        </script>
+    </body>
+</html>
+
