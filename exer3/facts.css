@@ -53,6 +53,7 @@ body {
     font-size: 25px;
     margin: 20px 80px;
     text-align: center;
+    box-shadow: 2px 4px 2px #231e10;
 }
 
 .facts-part {
@@ -90,11 +91,11 @@ body {
 .images {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    width: 50%;
+    width: 55%;
     align-items: center;
 }
 
 .image {
-    width: 70%;
+    width: 73%;
+    margin: 27px;
 }
