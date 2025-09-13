@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap");
+
+
+body {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    overflow: hidden;
+}
+
+.all-woogle {
+    height: 100vh;
+    background-color: #610C0C;
+}
+
+.navbar {
+    display: flex;
+    background-color: #EBB214;
+    justify-content: space-between;
+    height: 90px;
+    width: 100%;
+}
+
+.logo {
+    height: 73px;
+    width: auto;
+    justify-self: center;
+    align-self: center;
+    margin: 5px 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+}
+
+.woogle-text {
+    color: white;
+    font-size: 100px;
+    font-weight: 800;
+}
+
+.search {
+    display: flex;
+    width: 70%;
+    gap: 30px;
+}
+
+input {
+    padding: 30px;
+    border-radius: 40px;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    box-shadow: 2px 4px 2px #302424;
+}
+
+button {
+    background-color: #cb5353;
+    border-radius: 35px;
+    padding: 5px 18px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    width: 18%;
+    height: 65px;
+    align-self: center;
+    box-shadow: 2px 4px 2px #4a1d1d;
+}
+
+button:hover {
+    transform: translateY(3px);
+    box-shadow: 2px 5px 4px #371111;
+}
+
+button:active {
+    transform: scale(0.97);
+}
