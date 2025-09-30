@@ -1,6 +1,5 @@
 import './App.css';
 import {useState, useEffect} from 'react';
-import Pokemon from './components/Pokemon.js'
 
 const URL = "https://pokeapi.co/api/v2/pokemon";
 async function getPokemonJSON(dexNumber) {
@@ -36,7 +35,6 @@ function App() {
   }, [id]);
 
   const name = data?.name ?? `#${id}`;
-  const moves = (data?.moves ?? []).map((m) => m.move.name);
   const sprite =
     data?.sprites?.other?.["official-artwork"]?.front_default ||
     data?.sprites?.front_default ||
@@ -121,7 +119,7 @@ function App() {
                 <h2>MOVES</h2>
                 <div className="moves-panel">
                   {(data?.moves ?? [])
-                    .map((m) => m.move.name.replace(/-/g, " ")) // "razor wind"
+                    .map((m) => m.move.name.replace(/-/g, " "))
                     .join(", ")}
                 </div>
               </div>
