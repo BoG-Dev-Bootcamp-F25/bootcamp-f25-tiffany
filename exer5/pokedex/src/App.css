@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20px;
+  margin: 30px;
 }
 
 .image {
@@ -27,25 +27,62 @@
   padding: 10px;
   border-radius: 10px;
   border: black 1px solid;
+  width: 48%;
+  align-self: center;
 }
 
 .type {
   display: flex;
   flex-direction: column;
   text-align: left;
+  align-self: center;
+  width: 54%;
 }
+
+.all-types {
+  display: flex;
+  gap: 5px;
+}
+
+.typeName {
+  padding: 7px 10px;
+  border-radius: 10px;
+}
+
+.normal  { background-color: #A8A77A; }
+.fire    { background-color: #EE8130; }
+.water   { background-color: #6390F0; }
+.electric{ background-color: #F7D02C; }
+.grass   { background-color: #7AC74C; }
+.ice     { background-color: #96D9D6; }
+.fighting{ background-color: #C22E28; }
+.poison  { background-color: #A33EA1; }
+.ground  { background-color: #E2BF65; }
+.flying  { background-color: #A98FF3; }
+.psychic { background-color: #F95587; }
+.bug     { background-color: #A6B91A; }
+.rock    { background-color: #B6A136; }
+.ghost   { background-color: #735797; }
+.dragon  { background-color: #6F35FC; }
+.dark    { background-color: #705746; }
+.steel   { background-color: #B7B7CE; }
+.fairy   { background-color: #D685AD; }
+
 
 .arrows {
   display: flex;
   justify-content: center;
   gap: 30px;
+  margin: 20px;
 }
 
 .arrow {
   border: none;
-  padding: 10px 15px;
+  padding: 10px 25px;
   border-radius: 10px;
   font-size: 20px;
+  box-shadow: 2px 2px 2px gray;
+  font-weight: 700;
 }
 
 .right-side {
@@ -64,7 +101,8 @@
   padding: 10px 20px;
   border-radius: 10px;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
+  box-shadow: 2px 2px 2px gray;
 }
 
 .movesBtn {
@@ -72,5 +110,6 @@
   border: none;
   padding: 10px 15px;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 20px;
+  box-shadow: 2px 2px 2px gray;
 }

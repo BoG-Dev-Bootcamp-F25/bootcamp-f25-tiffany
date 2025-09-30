@@ -39,7 +39,7 @@ function App() {
   }, [id]);
 
   const name = data?.name ?? `#${id}`;
-  const types = data?.types?.map((t) => t.type.name).join(", ") || "—";
+  const typeNames = (data?.types ?? []).map((t) => t.type.name);
   const moves = data?.moves?.slice(0, 12) || [];
   const sprite =
     data?.sprites?.other?.["official-artwork"]?.front_default ||
@@ -52,13 +52,19 @@ function App() {
         <h1>Exercise 5 - PokeDex!</h1>
         <div className="content">
           <div className="left-side">
-            <img src={sprite} alt={`${data?.name} artwork`} className='image'/>
+            <img src={sprite} alt={`${data?.name} artwork`} className="image" />
             <h3 className="name">{name}</h3>
             <div className="type">
               <p>
                 <b>Types:</b>
               </p>
-              <p className='{types}'>{types}</p>
+              <div className="all-types">
+                {(data?.types ?? []).map(({ type }) => (
+                  <p className={`typeName ${type.name.toLowerCase()}`}>
+                    {type.name}
+                  </p>
+                ))}
+              </div>
             </div>
             <div className="arrows">
               <button className="arrow" onClick={prev}>
