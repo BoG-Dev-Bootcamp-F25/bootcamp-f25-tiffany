@@ -1,6 +1,13 @@
 import './App.css';
-import {useState, useEffect, React} from 'react';
+import {useState, useEffect} from 'react';
 import Pokemon from './components/Pokemon.js'
+
+const URL = "https://pokeapi.co/api/v2/pokemon";
+async function getPokemonJSON(dexNumber) {
+  const res = await fetch(`${URL}/${dexNumber}/`);
+  if (!res.ok) throw new Error((await res.text()) || `HTTP ${res.status}`);
+  return res.json();
+}
 
 function App() {
   const [data, setData] = useState(null);
@@ -10,41 +17,43 @@ function App() {
   const [activeTab, setActiveTab] = useState("info");
 
   useEffect(() => {
-    const controller = new AbortController();
-
-    async function load() {
+    let cancelled = false;
+    (async () => {
       try {
         setLoading(true);
         setError(null);
-        setData(null);
-
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`, {
-          signal: controller.signal,
-        });
-        if (!res.ok) {
-          const msg = await res.text();
-          throw new Error(msg || `HTTP ${res.status}`);
-        }
-        const json = await res.json();
-        setData(json);
+        const pokemonJSON = await getPokemonJSON(id);
+        if (!cancelled) setData(pokemonJSON);
       } catch (e) {
-        if (e.name !== "AbortError")
-          setError(e.message || "Something went wrong.");
+        if (!cancelled) setError(e.message || "Something went wrong.");
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
-    }
-
-    load();
-    return () => controller.abort();
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [id]);
 
   const name = data?.name ?? `#${id}`;
-  const typeNames = (data?.types ?? []).map((t) => t.type.name);
-  const moves = data?.moves?.slice(0, 12) || [];
+  const moves = (data?.moves ?? []).map((m) => m.move.name);
   const sprite =
     data?.sprites?.other?.["official-artwork"]?.front_default ||
-    data?.sprites?.front_default;
+    data?.sprites?.front_default ||
+    null;
+  const heightM = data ? (data.height / 10).toFixed(1) : null; // meters
+  const weightKg = data ? (data.weight / 10).toFixed(1) : null; // kilograms
+
+  const statVal = (n) =>
+    data?.stats?.find((s) => s.stat.name === n)?.base_stat ?? "—";
+
+  const hp = statVal("hp");
+  const attack = statVal("attack");
+  const defense = statVal("defense");
+  const spAttack = statVal("special-attack");
+  const spDefense = statVal("special-defense");
+  const speed = statVal("speed");
+
   const prev = () => setId((i) => Math.max(1, i - 1));
   const next = () => setId((i) => i + 1);
   return (
@@ -77,16 +86,42 @@ function App() {
             </div>
           </div>
           <div className="right-side">
-            {activeTab === "info"?
+            {activeTab === "info" ? (
               <div className="info">
                 <h2>Info</h2>
-                <div className="info-panel"></div>
-              </div> :
+                <div className="info-panel">
+                  <p>
+                    <b>height:</b> {heightM ? `${heightM} m` : "—"}
+                  </p>
+                  <p>
+                    <b>weight:</b> {weightKg ? `${weightKg} kg` : "—"}
+                  </p>
+                  <p>
+                    <b>hp:</b> {hp ? `${hp} ` : "—"}
+                  </p>
+                  <p>
+                    <b>attack:</b> {attack ? `${attack} ` : "—"}
+                  </p>
+                  <p>
+                    <b>defense:</b> {defense ? `${defense} ` : "—"}
+                  </p>
+                  <p>
+                    <b>special-attack:</b> {spAttack ? `${spAttack} ` : "—"}
+                  </p>
+                  <p>
+                    <b>special-defense:</b> {spDefense ? `${spDefense} ` : "—"}
+                  </p>
+                  <p>
+                    <b>speed:</b> {speed ? `${speed} ` : "—"}
+                  </p>
+                </div>
+              </div>
+            ) : (
               <div className="moves">
                 <h2>Moves</h2>
-                <div className="moves-panel"></div>
+                <div className="moves-panel">{moves}</div>
               </div>
-            }
+            )}
             <div className="buttons">
               <button
                 className={activeTab === "info" ? "infoBtnOn" : "infoBtn"}

@@ -113,6 +113,20 @@
   box-shadow: 2px 2px 2px gray;
 }
 
+.info-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-panel p {
+  margin: 5px;
+}
+
+.moves, .info {
+  background-color: rgb(236, 235, 235);
+  padding: 10px;
+}
+
 .movesBtn {
   background-color: rgb(236, 235, 235);
   border: none;
