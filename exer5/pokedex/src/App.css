@@ -169,6 +169,16 @@
   font-weight: 700;
 }
 
+.movesBtn:hover, .movesBtnOn:hover, .infoBtn:hover, .infoBtnOn:hover {
+  transform: translateY(2px);
+  box-shadow: 2px 4px 8px rgb(100, 98, 98);
+}
+
+.movesBtn:active, .movesBtnOn:active, .infoBtn:active, .infoBtnOn:active {
+  transform: scale(0.98);
+  box-shadow: 2px 6px 6px rgb(54, 52, 52);
+}
+
 h2 {
   font-size: 28px;
 }
