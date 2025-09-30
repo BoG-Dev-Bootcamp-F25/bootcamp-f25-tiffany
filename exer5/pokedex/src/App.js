@@ -88,7 +88,7 @@ function App() {
           <div className="right-side">
             {activeTab === "info" ? (
               <div className="info">
-                <h2>Info</h2>
+                <h2>INFO</h2>
                 <div className="info-panel">
                   <p>
                     <b>height:</b> {heightM ? `${heightM} m` : "—"}
@@ -118,8 +118,12 @@ function App() {
               </div>
             ) : (
               <div className="moves">
-                <h2>Moves</h2>
-                <div className="moves-panel">{moves}</div>
+                <h2>MOVES</h2>
+                <div className="moves-panel">
+                  {(data?.moves ?? [])
+                    .map((m) => m.move.name.replace(/-/g, " ")) // "razor wind"
+                    .join(", ")}
+                </div>
               </div>
             )}
             <div className="buttons">
