@@ -96,16 +96,33 @@
 }
 
 .infoBtn {
-  background-color: rgb(71, 65, 251);
+  background-color: rgb(236, 235, 235);
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
-  color: white;
+  font-size: 20px;
+  box-shadow: 2px 2px 2px gray;
+}
+
+.infoBtnOn {
+  background-color: rgb(102, 255, 102);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
   font-size: 20px;
   box-shadow: 2px 2px 2px gray;
 }
 
 .movesBtn {
+  background-color: rgb(236, 235, 235);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 2px 2px 2px gray;
+}
+
+.movesBtnOn {
   background-color: rgb(102, 255, 102);
   border: none;
   padding: 10px 15px;

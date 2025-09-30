@@ -7,6 +7,7 @@ function App() {
   const [id, setId] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState("info");
 
   useEffect(() => {
     const controller = new AbortController();
@@ -76,11 +77,29 @@ function App() {
             </div>
           </div>
           <div className="right-side">
-            <h2>Moves</h2>
-            <div className="moves-panel"></div>
+            {activeTab === "info"?
+              <div className="info">
+                <h2>Info</h2>
+                <div className="info-panel"></div>
+              </div> :
+              <div className="moves">
+                <h2>Moves</h2>
+                <div className="moves-panel"></div>
+              </div>
+            }
             <div className="buttons">
-              <button className="infoBtn">Info</button>
-              <button className="movesBtn">Moves</button>
+              <button
+                className={activeTab === "info" ? "infoBtnOn" : "infoBtn"}
+                onClick={() => setActiveTab("info")}
+              >
+                Info
+              </button>
+              <button
+                className={activeTab === "moves" ? "movesBtnOn" : "movesBtn"}
+                onClick={() => setActiveTab("moves")}
+              >
+                Moves
+              </button>
             </div>
           </div>
         </div>
