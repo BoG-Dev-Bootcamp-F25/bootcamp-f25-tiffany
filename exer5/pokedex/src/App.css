@@ -126,7 +126,7 @@ body {
   font-weight: 700;
 }
 
-.info {
+.info, .moves {
   display: flex;
   flex-direction: column;
 }
@@ -189,5 +189,5 @@ h2 {
   background-color: #70a4c4;
   padding: 20px;
   border-radius: 20px;
-  width: 80%;
+  width: 77%;
 }
