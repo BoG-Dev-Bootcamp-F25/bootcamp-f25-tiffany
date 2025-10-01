@@ -11,4 +11,4 @@ Throughout this bootcamp, bootcampers will submit projects and exercises through
 This repo contains information and starter code for lectures, exercises, and projects. As a bootcamper, you'll be uploading all of your exercise submissions to your forked repository. Make sure to frequently click **Sync Fork** on GitHub to make sure you have up-to-date exercises and projects!
 
 ## Exercise 5 Video
-<video src="videos/demo.mov" controls width="640" />
+<video src="videos/demo.mp4" controls width="640" />
