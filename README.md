@@ -1,5 +1,6 @@
 # bootcamp-f25
-
+Exercise 6 Video
+https://youtube.com/shorts/pz3LGRGtLt8?feature=share
 ## Fall 25 Dev Bootcamp Exercises
 
 This repository contains all the exercises and resources needed for the Fall 2025 Dev Bootcamp.
@@ -13,5 +14,3 @@ This repo contains information and starter code for lectures, exercises, and pro
 ## Exercise 5 Video
 <video src="videos/demo-compact.mp4" controls width="640" />
 
-Exercise 6 Video
-https://youtube.com/shorts/pz3LGRGtLt8?feature=share
