@@ -13,5 +13,5 @@ This repo contains information and starter code for lectures, exercises, and pro
 ## Exercise 5 Video
 <video src="videos/demo-compact.mp4" controls width="640" />
 
-## Exercise 6 Video
+Exercise 6 Video
 https://youtube.com/shorts/pz3LGRGtLt8?feature=share
